@@ -1,0 +1,4 @@
+title: API de VTV en Argentina
+description: API VTV Argentina para consultar estado y vencimiento de verificacion tecnica por patente.
+url: https://patente-ar.github.io
+baseurl: /api-vtv-argentina

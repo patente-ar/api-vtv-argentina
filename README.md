@@ -6,6 +6,8 @@
 [![Endpoint](https://img.shields.io/badge/endpoint-POST%20%2Fv1%2Fconsultas-111827)](https://patente.ar/api-vtv)
 [![Payload](https://img.shields.io/badge/payload-JSON-334155)](./openapi/openapi.yaml)
 [![Auth](https://img.shields.io/badge/auth-Bearer%20API%20key-2563EB)](#request)
+[![Cuenta](https://img.shields.io/badge/cuenta-crear%20gratis-0A66C2)](https://patente.ar/registro)
+[![Playground](https://img.shields.io/badge/playground-probar%20API-7C3AED)](https://patente.ar/desarrolladores/api?tab=playground)
 [![Webhooks](https://img.shields.io/badge/webhooks-HMAC%20SHA--256-7C3AED)](#webhooks)
 [![Idempotency](https://img.shields.io/badge/idempotency-Idempotency--Key-059669)](#request)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-16A34A)](./openapi/openapi.yaml)
@@ -66,6 +68,20 @@ python3 examples/python/consulta.py
 ```
 
 La respuesta puede ser inmediata o asincronica. Cuando queda en proceso, patente.ar responde con `202 accepted` y un `requestId`; el resultado final puede llegar por webhook.
+
+## Activar API y probar en Playground
+
+Para probar API VTV Argentina sin armar un backend desde cero, crea una cuenta en patente.ar, pedi habilitar la API `vtv` y usa el Playground para ejecutar requests con API keys, payloads de ejemplo, idempotencia, webhooks y logs.
+
+| Paso | Link | Que hacer |
+| --- | --- | --- |
+| 1 | [Crear cuenta en patente.ar](https://patente.ar/registro) | Registrar la cuenta de empresa o equipo que va a consumir la API. |
+| 2 | [Pedir habilitacion de la API](https://patente.ar/contacto?asunto=Habilitar%20API%20vtv) | Solicitar que activen el producto `vtv` y el esquema de creditos. |
+| 3 | [Abrir el Playground](https://patente.ar/desarrolladores/api?tab=playground) | Probar payloads reales de integracion, revisar respuestas y validar webhooks sin publicar credenciales. |
+| 4 | [Pasar a produccion](https://patente.ar/api-vtv) | Configurar API keys, webhook firmado, idempotencia y trazabilidad por `requestId`. |
+
+El Playground requiere iniciar sesion y tener el modulo API habilitado para la cuenta. Si todavia no aparece, pedi la habilitacion desde el link anterior.
+
 
 ## Request
 
@@ -148,6 +164,9 @@ Ver ejemplos en:
 ## Links
 
 - Producto: [https://patente.ar/api-vtv](https://patente.ar/api-vtv)
+- Crear cuenta: [https://patente.ar/registro](https://patente.ar/registro)
+- Habilitar API: [https://patente.ar/contacto?asunto=Habilitar%20API%20vtv](https://patente.ar/contacto?asunto=Habilitar%20API%20vtv)
+- Playground: [https://patente.ar/desarrolladores/api?tab=playground](https://patente.ar/desarrolladores/api?tab=playground)
 - Patente.ar: [https://patente.ar](https://patente.ar)
 - Documentacion OpenAPI: [openapi/openapi.yaml](./openapi/openapi.yaml)
 

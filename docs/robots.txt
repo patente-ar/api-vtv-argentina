@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://patente-ar.github.io/api-vtv-argentina/sitemap.xml
