@@ -9,7 +9,7 @@
 - .gitignore: Node
 - License: MIT License
 - Homepage: https://patente.ar/api-vtv
-- Description: Ejemplos de integracion para consultar estado y vencimiento de VTV por patente con la API de patente.ar.
+- Description: API VTV Argentina para consultar estado y vencimiento de verificacion tecnica por patente.
 
 ## Topics
 
@@ -36,7 +36,7 @@ api, argentina, vtv, verificacion-tecnica, patentes, webhooks, openapi
 ```bash
 GH_TOKEN="$(security find-generic-password -a patente-ar -s codex-github:doc-apis-github -w)"
 gh repo edit patente-ar/api-vtv-argentina \
-  --description "Ejemplos de integracion para consultar estado y vencimiento de VTV por patente con la API de patente.ar." \
+  --description "API VTV Argentina para consultar estado y vencimiento de verificacion tecnica por patente." \
   --homepage "https://patente.ar/api-vtv" \
   --enable-issues=true
 gh repo edit patente-ar/api-vtv-argentina --add-topic "api,argentina,vtv,verificacion-tecnica,patentes,webhooks,openapi"
