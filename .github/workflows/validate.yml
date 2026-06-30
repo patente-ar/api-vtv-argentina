@@ -1,0 +1,21 @@
+name: validate-examples
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: node --check examples/node/consulta.mjs
+      - run: node --check webhooks/node/verify-signature.mjs
+      - run: python -m py_compile examples/python/consulta.py webhooks/python/verify_signature.py

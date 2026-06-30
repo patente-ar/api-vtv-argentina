@@ -1,0 +1,89 @@
+openapi: 3.1.0
+info:
+  title: API de VTV en Argentina
+  version: 1.0.0
+  description: Ejemplos publicos para integrar API de VTV en Argentina con patente.ar.
+servers:
+  - url: https://api.patente.ar
+paths:
+  /v1/consultas:
+    post:
+      summary: Crear consulta vtv
+      description: El producto queda determinado por la API key emitida para vtv.
+      operationId: createConsultavtv
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Idempotency-Key
+          in: header
+          required: false
+          schema:
+            type: string
+            maxLength: 160
+          description: Clave opcional para evitar duplicados en reintentos.
+        - name: x-token
+          in: header
+          required: false
+          schema:
+            type: string
+            maxLength: 256
+          description: Token opcional que patente.ar devuelve en el webhook.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+            examples:
+              default:
+                value:
+                  {
+                    "patente": [
+                      "AB123CD"
+                    ],
+                    "jurisdiccion": [
+                      "pba",
+                      "caba"
+                    ]
+                  }
+      responses:
+        "202":
+          description: Consulta aceptada para procesamiento asincronico.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AcceptedResponse"
+        "200":
+          description: Resultado inmediato cuando el proveedor responde en linea.
+        "401":
+          description: Authorization Bearer requerido o invalido.
+        "402":
+          description: Creditos insuficientes.
+        "422":
+          description: Payload invalido.
+        "429":
+          description: Rate limit.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    AcceptedResponse:
+      type: object
+      required: [code, status, requestId, timestamp]
+      properties:
+        code:
+          type: integer
+          example: 202
+        status:
+          type: string
+          example: accepted
+        message:
+          type: string
+        requestId:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
