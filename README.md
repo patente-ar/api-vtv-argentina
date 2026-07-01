@@ -1,26 +1,19 @@
 # API de VTV en Argentina
 
 [![Docs](https://img.shields.io/badge/docs-patente.ar-0A66C2)](https://patente.ar/api-vtv)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-public%20docs-181717)](https://patente-ar.github.io/api-vtv-argentina/)
-[![Argentina](https://img.shields.io/badge/market-Argentina-38BDF8)](https://patente.ar)
-[![Endpoint](https://img.shields.io/badge/endpoint-POST%20%2Fv1%2Fconsultas-111827)](https://patente.ar/api-vtv)
-[![Payload](https://img.shields.io/badge/payload-JSON-334155)](./openapi/openapi.yaml)
-[![Auth](https://img.shields.io/badge/auth-Bearer%20API%20key-2563EB)](#request)
-[![Cuenta](https://img.shields.io/badge/cuenta-crear%20gratis-0A66C2)](https://patente.ar/registro)
 [![Playground](https://img.shields.io/badge/playground-probar%20API-7C3AED)](https://patente.ar/desarrolladores/api?tab=playground)
-[![Webhooks](https://img.shields.io/badge/webhooks-HMAC%20SHA--256-7C3AED)](#webhooks)
-[![Idempotency](https://img.shields.io/badge/idempotency-Idempotency--Key-059669)](#request)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-16A34A)](./openapi/openapi.yaml)
+[![Webhooks](https://img.shields.io/badge/webhooks-HMAC%20SHA--256-7C3AED)](#webhooks)
 [![Examples](https://img.shields.io/badge/examples-curl%20%7C%20Node.js%20%7C%20Python-F97316)](#inicio-rapido)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE)
 
 > Automatiza control de VTV por patente para bloquear operaciones riesgosas, ordenar vencimientos y alimentar sistemas internos con datos verificables.
 
+Este repo no es un SDK ni un wrapper instalable. Es un kit publico de integracion para equipos que quieren evaluar la API de patente.ar antes de conectarla a un CRM, ERP, backoffice, marketplace, seguro o flujo de flota.
+
 **patente.ar** centraliza APIs vehiculares para Argentina: consultas por patente o VIN, procesamiento asincronico, trazabilidad por request y documentacion pensada para equipos de producto, datos y operaciones.
 
-Este kit publico esta escrito para busquedas tecnicas y comerciales como "API VTV Argentina", "API de VTV en Argentina", "API patente Argentina", "consulta por patente API" e "integracion vehicular Argentina".
-
-## Por que este repo
+## Que resuelve
 
 - Entrada por patente argentina normalizada.
 - Soporte para jurisdicciones VTV configuradas por cuenta.
